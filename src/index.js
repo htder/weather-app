@@ -30,16 +30,17 @@ const submit = document.querySelector(".submit");
 const weatherContainer = document.querySelector(".weather-info");
 
 function displayData(data) {
-  const html = `
-    <p>${data.name}, ${data.country}</p>
-      <p>${data.description}</p>
-      <ul>
-        <li>Temperature: ${Math.ceil(data.weatherData.temp - 273.15)}&#8451</li>
-        <li>Feels like: ${Math.ceil(
-          data.weatherData.feels_like - 273.15
-        )}&#8451</li>
-        <li>Humidity: ${data.weatherData.humidity}%</li>
-      </ul>`;
+  const html = `<p class="title">${data.name}, ${data.country}</p>
+  <p class="description">${data.description}</p>
+  <ul>
+    <li class="temps">Temperature: ${Math.ceil(
+      data.weatherData.temp - 273.15
+    )}&#8451</li>
+    <li class="temps">Feels like: ${Math.ceil(
+      data.weatherData.feels_like - 273.15
+    )}&#8451</li>
+    <li class="temps">Humidity: ${data.weatherData.humidity}%</li>
+  </ul>`;
   weatherContainer.innerHTML = html;
 }
 
